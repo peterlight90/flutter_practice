@@ -1,30 +1,46 @@
 import 'package:flutter/material.dart';
-import 'widgets/transaction_chart/index.dart';
-import 'widgets/transaction_list/index.dart';
 
-class HomePage extends StatelessWidget {
+import 'package:personal_expenses/screens/homepage/widgets/user_transactions/index.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter App',
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  // String titleInput;
+  // String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Minh Title'),
+        title: Text('Flutter App'),
       ),
-      body: Container(
-        // Decoration 
-        child: Center(    
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              TransactionChart(),
-              Card(child: Column(children: <Widget>[
-                TextField(),
-                TextField()
-              ],),),
-              TransactionList()
-            ],
-          )
-        )
-      )
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            child: Card(
+              color: Colors.blue,
+              child: Text('CHART!'),
+              elevation: 5,
+            ),
+          ),
+          UserTransactions()
+        ],
+      ),
     );
   }
 }
