@@ -1,0 +1,10 @@
+{
+    "m1": {
+        "name": "Bún Mắm",
+        "price": 20000
+    },
+    "m2": {
+        "name":"Bún Thit Nướng",
+        "price":20000
+    }
+}
