@@ -1,63 +1,47 @@
 import 'package:flutter/material.dart';
+import 'styles.dart';
 
-void main() => runApp(DashBoardScreen());
-
-class DashBoardScreen extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+class DashboardScreen extends StatelessWidget {
+  static String tag = 'home-screen';
+  final title_bar = Container(
+    width: 500,
+    color: Colors.greenAccent,
+    child: Text(
+      "Guilder",
+      textAlign: TextAlign.right,
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 16.0,
+        fontWeight: FontWeight.bold
       ),
-      home: MyHomePage(title: 'Foods Random'),
-    );
-  }
-}
+    ),
+  );
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  String food = null;
-
-  void _getFood() {
-    setState(() {
-      food;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "Below are what you will eat today, have a good meal",
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: MediaQuery.of(context).size.height / 3,
+              floating: false,
+              pinned: true,
+              flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: title_bar,
+                  background: Image.asset(
+                    "assets/images/wallpaper.jpg",
+                    fit: BoxFit.cover,
+                  )),
             ),
-            Text(
-              '$food',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+          ];
+        },
+        body: Center(
+          child: Text("Sample Text"),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _getFood,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }

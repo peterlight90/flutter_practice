@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:personal_expenses/screens/homepage/widgets/user_transactions/index.dart';
 
 void main() => runApp(MyApp());
@@ -17,8 +16,8 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   // String titleInput;
   // String amountInput;
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
+  // final titleController = TextEditingController();
+  // final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

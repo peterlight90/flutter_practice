@@ -3,14 +3,14 @@ import 'screens/dashboard/index.dart';
 
 class Routes{
   final routes = <String, WidgetBuilder>{
-    '/DashBoardScreen' : (BuildContext context) => new DashBoardScreen()
+    '/DashboardScreen' : (BuildContext context) => new DashboardScreen()
   };
 
   Routes(){
     runApp(new MaterialApp(
       title: 'Structer Demo',
       routes: routes,
-      home: new DashBoardScreen(),
+      home: new DashboardScreen(),
     ));
   }
 }
