@@ -3,7 +3,8 @@ import 'styles.dart';
 import 'package:foodchoice/widgets/GradientButton.dart';
 
 class DashboardScreen extends StatelessWidget {
-  static String tag = 'home-screen';
+  static String tag = 'dashboard-screen';
+
   final title = Text(
     "Guiders",
     style: TextStyle(
