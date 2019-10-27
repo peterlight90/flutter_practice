@@ -52,6 +52,7 @@ class DashboardScreen extends StatelessWidget {
             ),
             onPressed: () {
               print('button clicked');
+              Navigator.pushNamed(context, '/AddGuiderScreen');
             }));
 
     final logo = Hero(
